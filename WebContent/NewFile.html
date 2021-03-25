@@ -8,6 +8,32 @@
 <script>
 		$(document).ready(function()
 		{
+<<<<<<< Updated upstream
+=======
+			$("databasediagram").each(function()
+				{
+					var tables = $(this).attr('tables').split(",");
+					//ogni tabella prende due colonne?
+					
+					res = "<div class='databasediagram w3-row'><div class='w3-col m1'>&nbsp;</div>";
+					for(var i=0;i<tables.length;i++)
+					{
+						var table = tables[i];
+						var tablename = tables[i][0];
+						var tablecardinality = tables[i][1];
+						res+="<div class='table w3-col m1'>"+tablename+"</div>";
+						if(i<tables.length-1)
+							res+="<div class='tableconnector w3-col m1'><hr></div>";
+					}
+					res+="<div class='w3-col m1'>&nbsp;</div></div>";
+					$(this).html(res);
+				});
+		//$(".classdiagram").each(function()
+		//{
+		//	$(this).html(ClassDiagramRenderer.render(document, $(this).attr("id"),$(this).text()));
+			
+		//});
+>>>>>>> Stashed changes
 		$(".code").each(function()
 		{
 			var language = $(this).attr('language');
@@ -126,6 +152,7 @@
 			--un commento in sql!
 			SELECT * FROM ciao;
 		</p>
+<<<<<<< Updated upstream
 		<dbdiagram>
 			<dbel type="table" name="author" fields="id int pk,gigi,gigi,bepi,lollo,name varchar(100),surname varchar(200)" 
 			/>
@@ -142,5 +169,9 @@
 			<actor name="qualcuno" uses="uc1,uc2,uc3,uc1,uc4,uc5,uc1,uc4,uc5"></actor>
 			<actor name="QUALCUNALTRO" uses="uc1,uc4,uc5"></actor>
 		</ucdiagram>
+=======
+		<databasediagram tables="a:1,b:n"></databasediagram>
+		
+>>>>>>> Stashed changes
 	</div>
 </html>
